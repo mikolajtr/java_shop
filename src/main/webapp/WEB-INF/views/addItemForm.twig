@@ -1,0 +1,27 @@
+{% extends "layout/main.twig" %}
+
+{% block title %}
+    Rupieciarnia - Dodaj przedmiot
+{% endblock %}
+
+{% block content %}
+    <h3>Dodaj przedmiot</h3>
+    <form class="form-horizontal" action="/add_item" method="post" enctype="multipart/form-data">
+        {{ message }}
+        <p color="blue">Podaj nazwe i opis przedmiot</p>
+        <p>Nazwa: <input type="text" name="name" /></p>
+        <!--p>Owner: <input type="text" name="owner" /></p-->
+        <p>Opis: <textarea rows = "2" name="description"></textarea></p>
+        <p>Chcę: <select class = "select-picker" name="want">
+                <option>Wymienic na inny</option>
+                <option>Sprzedac</option>
+                <option>Oddac</option>
+        </select></p>
+        <p>Twoje dane kontaktowe(nr telefonu, email itp.): <input type="text" name="contact"></p>
+        <p><label for = "exampleInputFile">Podaj odnośnik do obrazka</label>
+        <input type="text" id="exampleInputFile" name="image" placeholder="http://adres-obrazka.rozszerzenie"></p>
+        <p>Obrazek zostanie przeskalowany do rozmiarów 250x250 pikseli, jego jakość może ulec pogorszeniu</p>
+
+        <p><input type="submit" value="Dodaj przedmiot" /></p>
+    </form>
+{% endblock %}

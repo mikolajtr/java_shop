@@ -1,0 +1,20 @@
+{% extends "layout/main.twig" %}
+
+{% block title %}
+    Rupieciarnia - Panel użytkownika {{ "logged" }}
+{% endblock %}
+
+{% block content %}
+    <p>To twój panel użytkownika. Możesz w nim przeglądać i edytować informacje na twój temat.</p>
+    </br>
+    <h3>Zmiana hasła</h3>
+    <form class="form-horizontal" action="/change_password" method="post">
+        {{ message }}
+        <p>Tutaj możesz zmienić swoje hasło użytkownika</p>
+        <p>Stare hasło: <input type="password" name="oldPassword" /></p>
+        <p>Powtórz stare hasło: <input type="password" name="oldPasswordAgain" /></p>
+        <p>Nowe hasło: <input type="password" name="newPassword" /></p>
+        <p>Powtórz nowe hasło: <input type="password" name="newPasswordAgain" /></p>
+        <p><input type="submit" value="Zmień hasło" /></p>
+    <form>
+{% endblock %}

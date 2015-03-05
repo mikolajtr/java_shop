@@ -1,0 +1,15 @@
+{% extends "layout/main.twig" %}
+
+{% block title %}
+    Rupieciarnia - Zaloguj się
+{% endblock %}
+
+{% block content %}
+    <form class="form-horizontal" action="/login_user" method="post">
+        {{ message }}
+        <p>Zaloguj się</p>
+        <p>Login: <input type="text" name="username" /></p>
+        <p>Hasło: <input type="password" name="password" /></p>
+        <p><input type="submit" value="Zaloguj się" /></p>
+    <form>
+{% endblock %}

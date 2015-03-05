@@ -1,0 +1,21 @@
+{% extends "layout/main.twig" %}
+
+{% block title %}
+    Rupieciarnia - Lista wszystkich przedmiotów
+{% endblock %}
+
+{% block content %}
+    <h3>Lista wystawionych przedmiotów</h3>
+    <p>Użyj kombinacji Ctrl+F, aby znaleźć odpowiadające ci ogłoszenia.</p>
+    <div class="container">
+    {% if items %}
+        <div class="row">
+            {% for item in items %}
+                <div class="col-md-4">{{ item }}</div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>Lista jest pusta</p>
+    {% endif %}
+    </div>
+{% endblock %}

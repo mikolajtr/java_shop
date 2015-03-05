@@ -1,0 +1,13 @@
+{% extends "layout/main.twig" %}
+
+{% block title %}
+    Rupieciarnia - Potwierdzenie rejestracji
+{% endblock %}
+
+{% block content %}
+    {% if item %}
+        {{ item }}
+    {% else %}
+        Nie znaleziono przedmiotu w bazie danych.
+    {% endif %}
+{% endblock %}

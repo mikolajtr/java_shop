@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Rupieciarnia{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html";charset="UTF-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-default">
+    <div class="container">
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Strona główna</a></li>
+                <li><a href="/itemList">Lista przedmiotów</a></li>
+                <li><a href="/userPanel">Panel użytkownika</a></li>
+                <li><a href="/addItemForm">Dodaj przedmiot</a></li>
+            </ul>
+            <div class="nav navbar-left">
+                {% if logged %}
+                    Zalogowany jako <font color="#fff8dc">{{ logged }}</font></br>
+                    <a href="/logout">Wyloguj się</a>
+                {% else %}
+                    Niezalogowany</br>
+                    <a href="/login">Zaloguj się</a> lub <a href="/register">Zarejestruj</a>
+                {% endif %}
+            </div>
+            <form class="navbar-form navbar-right" role="search" action="/search" type="get">
+                <div class="form-group">
+                    <input name="value" type="text" class="form-control" placeholder="Szukaj">
+                </div>
+                <button id="submitbutton" type="submit" class="btn btn-default">Szukaj</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<!-- Główna zawartość -->
+<div class="container">
+    <h1>Rupieciarnia</h1>
+
+        <p>
+            {% block content %}{% endblock %}
+        </p>
+
+    <footer>
+        <p>&copy;2015 Adam Grzonkowski, Robert Miklas, Mikołaj Trawiński</p>
+    </footer>
+</div>
+
+<!-- Jak Bóg przykazał - JavaScript na końcu dokumentu -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>
